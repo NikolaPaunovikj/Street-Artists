@@ -1,0 +1,240 @@
+/* Artist Home Page  */
+.nav-bar {
+  width: 100%;
+  height: 69px;
+  background-color: #FCEBD5;
+  box-shadow: 0px 2px 2px 0px #00000040;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+}
+
+.artist-page {
+  margin-top: 69px;
+}
+
+.logo-container{
+  display: flex;
+  height: 69px;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo-container img{
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.hamburger-menu {
+  width: 32px;
+  height: 24px;
+  background-color:#FCEBD5;
+  position: absolute;
+  top: 34.5px;
+  transform: translateY(-50%);
+  left: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top, .mid, .bot {
+  height: 5px;
+  width: 100%;
+  background-color: #A16A5E;
+}
+
+
+.nav-item {
+  list-style: none;
+  text-decoration: none;
+  font-weight: 300;
+  line-height: 50px;
+  font-size: 32px;
+  text-align: center;
+  color: #FCEBD5;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-item {
+  height: 50px;
+  width: 127px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 191px;
+  position: fixed;
+  left: -100%;
+  top: 69px;
+  flex-direction: column;
+  background-color: #A16A5E;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  z-index: 99;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+/* Artist general section info */
+.artist-general-info{
+  height: 302px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#EDD5BB ;
+  
+}
+
+.total-items-row{
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  width: 91%;
+}
+
+.total-items-sold, .total-income{
+  width: 180px;
+  height: 120px;
+  /* padding: 22.33px 18.57px ; */
+  background-color:#A16A5E ;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total-items-sold p, .total-income p, .live-auction-item-row p {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 21.09px;
+  font-family: 'Roboto';
+  color: #FCEBD5;
+}
+
+.total-items-sold h1, .total-income h1, .live-auction-item-row h1 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 56.25px;
+  font-family: 'Roboto';
+  color: #FCEBD5;
+}
+
+.total-items-sold {
+  left: 18px;
+  top: 95px;
+}
+
+.total-income {
+  right: 18px;
+  top: 95px;
+}
+
+.live-auction-item-row {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.live-auctoning-item {
+   background-color:#D44C2E ;
+   width: 90.48%;
+   height: 120px;
+   margin-top: 18px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+
+.income-graph {
+  height: 525px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.income-heading {
+  margin-top: 18px;
+  width: 91.3%;
+}
+
+.income-heading h3 {
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21.09px;
+  color: #A16A5E;
+}
+
+.income-days-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.income-days-btns button{
+background-color:#A16A5E ;
+width: 24.15%;
+height: 27px;
+border: none;
+border-radius: 2px;
+text-align: center;
+}
+
+@media (max-width:397px){
+  .total-items-sold, .total-income{
+    width: 160px;
+  }
+  .total-items-sold h1, .total-income h1, .live-auction-item-row h1{
+    font-size: 30px;
+  }
+}
+
+@media (max-width:353px){
+  .total-items-sold, .total-income{
+    width: 140px;
+  }
+}
+
+@media (max-width:320px){
+  .income-days-btns button{
+    width: 70px;
+  }
+}
+
+@media (min-width:768px){
+  .total-items-row{ 
+    justify-content: center;
+
+  }
+  .total-income {
+    margin-left: 50px;
+  }
+}
+
+
+
+

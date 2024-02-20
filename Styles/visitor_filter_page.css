@@ -1,0 +1,132 @@
+.visitor-filter-page{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 69px;
+  left: -105%;
+  background-color: #A16A5E;
+}
+
+.visitor-filter-page-active {
+  top: 69px;
+  left: 0;
+  z-index: 99;
+  transition: 1s;
+}
+
+.visitor-filter-container {
+  width: 91.54%;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 22px;
+  position: relative;
+}
+
+.visitor-filter-container h1 {
+font-family: 'Roboto';
+
+}
+
+.by-item-title p {
+  font-family: 'Roboto';
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 15px ;
+}
+
+.by-item-title {
+  width: 100%;
+  border-bottom: 2px solid #FCEBD5; 
+  height: 159px;
+  color: #EDD5BB;
+}
+
+.by-item-title input {
+  width: 97px;
+  height: 27px;
+}
+
+.visitor-filter-page input, .by-price-inputs input {
+  width: 97px;
+  height: 27px;
+  color: #EDD5BB;
+  background: none;
+  border: solid 1px #EDD5BB;
+}
+
+.by-artist {
+  height: 139px;
+  width: 100%;
+  border-bottom: 2px solid #FCEBD5;
+}
+
+.by-artist p, .by-type p {
+  margin-top: 40px;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 300;
+  color: #FCEBD5;
+  line-height: 21.09px;
+}
+
+.by-artist select, .by-type select {
+  margin-top: 19px;
+  width: 97px;
+  height: 27px;
+  background: none;
+  border: 1px solid #FCEBD5;
+  color: #FCEBD5;
+  background-color: #A16A5E;
+}
+
+.by-price, .by-type {
+  height: 139px;
+  border-bottom: 2px solid #FCEBD5;
+}
+
+.by-price-heading p {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Roboto';
+  color: #EDD5BB;
+  margin-bottom: 26px;
+  line-height: 21.09px;
+}
+
+.by-price-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.by-price-inputs label {
+  color: #EDD5BB;
+  margin-right: 4px;
+}
+
+::placeholder {
+  color: #EDD5BB;
+}
+
+.accept-filter {
+  position: absolute;
+  right: 17.5px;
+  top: 718px;
+  width: 65px;
+  height: 67px;
+}
+
+.cancel-filter {
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  right: 17.5px;
+  top: 17.5px;
+}
+
+.option {
+ background-color: red;
+}

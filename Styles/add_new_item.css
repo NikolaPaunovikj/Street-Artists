@@ -1,0 +1,183 @@
+
+.add-new-item-section {
+  background-color: #A16A5E;
+  display: none;
+  justify-content: center;
+  z-index: 999;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.add-new-item-container{
+  width: 91.30%;
+  background-color: #A16A5E;
+  height: 100%;
+}
+
+.add-new-item-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-new-item-heading h1 {
+  font-family: 'Roboto';
+  color: #FCEBD5;
+  font-weight: 500;
+  font-size: 30px;
+  margin-top: 26px;
+}
+
+.checkbox-published {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-published input {
+  background-color: #EDD5BB;
+  border-radius: 2px;
+  border: 1px solid #EDD5BB;
+  width: 18px;
+  height: 17px;
+  margin-left: 5px;
+}
+
+.snapshot-items {
+  position: relative;
+}
+
+.checkbox-published label, .add-new-item-container p, .snapshot-items p {
+  color: #EDD5BB;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Roboto';
+ 
+}
+
+.snapshot-items p{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.snapshot-items i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+margin-top: 13px;
+}
+
+.title label, .description label, .type label, .price label, .image label {
+  color: #EDD5BB;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.title input, .description input, .type input, .price input, .image input {
+  background: none;
+  border: 1px solid #EDD5BB ;
+  width: 100%;
+  height: 27px;
+  border-radius: 2px;
+}
+
+.description input {
+  height: 83px;
+}
+
+.description,  .type-price-container, .image {
+  margin-top: 21px;
+  }
+
+  .type-price-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.type, .price {
+  width: 45.57%;
+}
+
+.add-new-item-container p {
+  text-align: center;
+}
+
+.snapshot-items {
+  display: flex;
+  height: 309px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: dashed 2px #FCEBD5;
+}
+
+.fa-camera {
+  font-size: 67px;
+  color: #EDD5BB;
+}
+
+.buttons-div-add-item {
+  width: 100%;
+  margin-top: 19px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-div-add-item button {
+  width: 45.57%;
+  height: 39px;
+}
+
+.add-new-item-btn, .cancel-btn, .confirmEdit  {
+  background-color: #D44C2E;
+  color: #FCEBD5;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+}
+
+.cancel-btn {
+  background-color: #E5E5E5;
+  color: #5A5A5A;
+
+}
+
+.add-new-item-section.active {
+ margin-top: 69px;
+  display: flex;
+  height: 100%;
+  background-color: #A16A5E;
+}
+
+.snapshot {
+  z-index: -99999;
+  width: 0px;
+  height: 0px;
+  position: fixed;
+}
+
+.snapshot-items img {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.error {
+  border: dashed 2px red;
+}
+
+.error-span {
+  color: #EDD5BB;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+

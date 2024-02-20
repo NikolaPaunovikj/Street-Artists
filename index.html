@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BOOTSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- LOCAL MAIN CSS-->
+    <link rel="stylesheet" href="./Styles/chart.css" />
+    <link rel="stylesheet" href="./Styles/home-page.css" />
+    <link rel="stylesheet" href="./Styles/artist_items_page.css" />
+    <link rel="stylesheet" href="./Styles/artist_home_page.css" />
+    <link rel="stylesheet" href="./Styles/add_new_item.css" />
+    <link rel="stylesheet" href="./Styles/visitor_home_page.css" />
+    <link rel="stylesheet" href="./Styles/visitor_landing_page.css" />
+    <link rel="stylesheet" href="./Styles/visitor_filter_page.css" />
+    <link rel="stylesheet" href="./Styles/canvas.css" />
+    <link rel="stylesheet" href="./Styles/auction_page.css" />
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <script src="https://kit.fontawesome.com/4eb4fe2df7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://unpkg.com/webcam-easy@1.1.1/dist/webcam-easy.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+    ></script>
+  </head>
+  <body>
+    <section class="nav-bar-section">
+      <nav style="display: none" class="nav-bar">
+        <div class="logo-container">
+          <a href=""><img src="./Images/Logo.png" alt="" /></a>
+          <h2 class="artist-name"></h2>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="">Home</a>
+          </li>
+          <li class="nav-item artist-items">Items</li>
+          <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+        </ul>
+
+        <div class="hamburger-menu">
+          <div class="top"></div>
+          <div class="mid"></div>
+          <div class="bot"></div>
+        </div>
+      </nav>
+    </section>
+    <!-- Home Page -->
+    <section style="display: block" class="home-page">
+      <header>
+        <div class="home-page-header w-100 text-center py-3">
+          <h2>Street ARTists</h2>
+        </div>
+      </header>
+      <!-- Home page body -->
+      <section style="display: block" class="home-page-body landing-page">
+        <div class="col py-4">
+          <img src="./Images/Logo.png" alt="" />
+        </div>
+        <div class="button-container my-5">
+          <div class="wrap1 py-5">
+            <div class="up">
+              <p>Join as Artist</p>
+              <div class="artist-list">
+                <select class="artist-dropdown" name="artistDropdown" id="artistDropdown">
+                  <option value="">Choose</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="wrap2">
+            <div class="down visitor-btn">
+              <p>Join as Visitor</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Artist home page -->
+
+    <section style="display: none" class="artist-page">
+      <section class="artist-general-info">
+        <div class="total-items-row">
+          <div class="total-items-sold">
+            <p>Total Items Sold</p>
+            <h1 class="items-sold"></h1>
+          </div>
+          <div class="total-income">
+            <p>Total Income</p>
+            <h1 class="total-income-number"></h1>
+          </div>
+        </div>
+        <div class="live-auction-item-row">
+          <div class="live-auctoning-item">
+            <p>Live Auctoning Item</p>
+            <h1 class="live-auctioning-price">$0</h1>
+            <p>current bid</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="income-graph">
+        <div class="income-heading">
+          <h3>Display my income for last</h3>
+          <div class="income-days-btns">
+            <button class="chartBtn" id="showLast7DaysButton">7 Days</button>
+            <button class="chartBtn" id="showLast14DaysButton">14 days</button>
+            <button class="chartBtn" id="showLast30DaysButton">30 days</button>
+          </div>
+        </div>
+
+        <canvas id="horizontalBarChart" style="max-width: 378px; max-height: 364px"></canvas>
+      </section>
+    </section>
+    <!-- ______________________ -->
+
+    <!-- Artist item page -->
+    <section style="display: none" class="artist-items-page"></section>
+    <div style="display: none" class="mod">
+      <h2>You are about to delete an item</h2>
+      <div class="mod-buttons">
+        <button class="confirm-mod">Confirm removal</button>
+        <button class="cancel-mod">Cancel</button>
+      </div>
+    </div>
+    <!-- ______________________ -->
+
+    <!-- Artist add new item -->
+
+    <section class="add-new-item-section">
+      <div class="add-new-item-container">
+        <div class="add-new-item-heading">
+          <h1 class="add-edit-text">Add new Item</h1>
+
+          <div class="checkbox-published">
+            <label for="checkbox">Is published</label>
+            <input type="checkbox" class="published-checkbox" name="checkbox" />
+          </div>
+        </div>
+        <div class="title">
+          <label for="">Title</label>
+          <br />
+          <input class="title-input" type="text" />
+        </div>
+        <div class="description">
+          <label for="">Description</label>
+          <br />
+          <input class="description-input" type="text" />
+        </div>
+        <div class="type-price-container">
+          <div class="type">
+            <label for="">Type</label>
+            <input class="type-input" type="text" />
+          </div>
+          <div class="price">
+            <label for="">Price</label>
+            <input class="price-input" type="number" />
+          </div>
+        </div>
+        <div class="image">
+          <label for="">Image URL</label>
+          <br />
+          <input class="image-input" type="text" />
+        </div>
+        <p>or</p>
+        <div>
+          <div class="snapshot-items">
+            <img class="snapshot-image" src="" alt="" />
+            <span style="display: none" class="error-span text-center"
+              >Please choose one image upload option</span
+            >
+
+            <i style="display: block" class="fa-solid fa-camera snapshot-camera"></i>
+
+            <p style="display: block" class="snapshot-p">Take a snapshot</p>
+          </div>
+        </div>
+
+        <canvas id="canvas" class="snapshot"></canvas>
+
+        <div class="buttons-div-add-item">
+          <button class="add-new-item-btn">Add New Item</button>
+          <button style="display: none" class="confirmEdit">Confirm Edit</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </section>
+    <section style="display: none" class="imagePopup">
+      <video width="100%" height="100%" style="object-fit: fill" class="webCam"></video>
+    </section>
+
+    <!-- Visitor Home Page Nav Bar -->
+    <section style="display: none" class="visitor-nav-bar-section">
+      <nav class="visitor-nav-bar">
+        <div class="logo-container">
+          <div class="logo-container-left">
+            <a href=""><img src="./Images/Logo.png" alt="" /></a>
+            <h2>Street Artists</h2>
+          </div>
+
+          <div class="auction-logo-container">
+            <img class="auction-logo" src="./Images/ant-design_home-filled@2x.png" alt="" />
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link">Home</a>
+          </li>
+          <li class="nav-item artist-items">Items</li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- ________________________________ -->
+    <!-- Visitors Home Page -->
+    <section style="display: none" class="visitor-home-page-section">
+      <div class="bricks-background">
+        <div class="looking-for-masterpiece-section">
+          <h1>Looking for a masterpiece?</h1>
+          <button class="listing-page-route-button">Find one now!</button>
+        </div>
+      </div>
+      <div class="slider-container"></div>
+    </section>
+    <section style="display: none" class="carousel-visitors-page w-100">
+      <div id="carouselExample" class="carousel slide m-0 w-100">
+        <div class="carousel-inner w-100">
+          <div class="carousel-item active w-100">
+            <div class="carousel-item-container">
+              <div class="carousel-left">
+                <div class="left-container">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                      perspiciatis deserunt maxime sunt impedit exercitationem!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-right">
+                <div class="right-container">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat excepturi,
+                    porro et ea consequuntur modi optio nostrum dolorum. Exercitationem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item w-100">
+            <div class="carousel-item-container">
+              <div class="carousel-left">
+                <div class="left-container">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                      perspiciatis deserunt maxime sunt impedit exercitationem!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-right">
+                <div class="right-container">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat excepturi,
+                    porro et ea consequuntur modi optio nostrum dolorum. Exercitationem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item w-100">
+            <div class="carousel-item-container">
+              <div class="carousel-left">
+                <div class="left-container">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                      perspiciatis deserunt maxime sunt impedit exercitationem!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-right">
+                <div class="right-container">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat excepturi,
+                    porro et ea consequuntur modi optio nostrum dolorum. Exercitationem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="" aria-hidden="true"
+            ><img class="backwards-img" src="./Images/Vector 1.png" alt=""
+          /></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span aria-hidden="true"
+            ><img class="next-img" src="./Images/Vector 2.png" alt=""
+          /></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Visitor-Listing -->
+    <section style="display: none" class="visitor-listing-page"></section>
+
+    <!-- Visitor filter button -->
+    <img style="display: none" class="filter-logo" src="./Images/Group 14.svg" alt="" />
+
+    <!-- Visitor-filter-page -->
+    <section class="visitor-filter-page">
+      <div class="visitor-filter-container">
+        <div class="by-item-title">
+          <h1>Filter by</h1>
+          <p>By item Title</p>
+          <input class="item-title-filter" placeholder="Label" type="text" />
+        </div>
+        <div class="by-artist">
+          <p>By Artist</p>
+          <select class="filter-option" name="" id="">
+            <option value="">Choose</option>
+          </select>
+        </div>
+        <div class="by-price">
+          <div class="by-price-heading">
+            <p>By Price</p>
+          </div>
+          <div class="by-price-inputs">
+            <div>
+              <label for="">Min:</label>
+              <input class="min-price" placeholder="Label" type="number" />
+            </div>
+            <div>
+              <label for="">Max:</label>
+              <input class="max-price" placeholder="Label" type="number" />
+            </div>
+          </div>
+        </div>
+        <div class="by-type">
+          <p>By Type</p>
+          <select class="filter-type" name="" id="">
+            <option value="">Choose</option>
+          </select>
+        </div>
+      </div>
+      <img class="accept-filter" src="./Images/Group 15.svg" alt="" />
+      <img class="cancel-filter" src="./Images/Group 19.png" alt="" />
+    </section>
+
+    <section style="display: none" class="auction-page">
+      <h2 class="no-items-auction" style="display: block">
+        There are currently no items on auction
+      </h2>
+      <div style="display: block" class="auction-item-container"></div>
+      <div style="display: block" class="bidding-container">
+        <form class="bidding-form" action="">
+          <label for="">Bid Ammount</label>
+          <input class="bid-input" type="number" />
+          <button class="submitBid" type="submit">Submit bid</button>
+        </form>
+        <ul class="bidding-values"></ul>
+        <div id="timer"></div>
+      </div>
+      <h4 style="display: none" class="item-sold">AUCTION FINISHED</h4>
+    </section>
+
+    <script src="./JS/data.js"></script>
+    <script src="./JS/general_selectors.js"></script>
+    <script src="./JS/home_page.js"></script>
+    <script src="./JS/artist_items_page.js"></script>
+    <script src="./JS/visitor.js"></script>
+    <script src="./JS/camera.js"></script>
+    <script src="./JS/auction_page.js"></script>
+    <script src="./JS/chart.js"></script>
+
+    <!-- POPPER JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

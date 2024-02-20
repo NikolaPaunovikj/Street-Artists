@@ -1,0 +1,22 @@
+.imagePopup {
+  background-color: #A16A5E;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+
+.webCam {
+  height: 657px;
+  width: 91.30434%;
+  box-shadow: 0px 6px 6px 0px #00000040;
+  margin-top: 120px;
+  margin-left: 4.761%;
+}
+
+.imagePopup i {
+margin-top: 20px;
+margin-left: 43.96%;
+font-size: 50px;
+}
